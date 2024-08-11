@@ -1,0 +1,116 @@
+/* Ensure the full-page background color covers the entire screen */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.App.team-details-page {
+    background-color: var(--team-color); 
+}
+
+.team-details-page {
+    padding: 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Styling for the team name on the details page */
+.team-details-page h1 {
+    color: white; /* Set team name to white */
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 0;
+    padding-top: 20px; /* Adjust padding to prevent cut-off */
+}
+
+/* Game cards styling */
+.game-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px 0;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+}
+
+/* Back button styling */
+.back-arrow {
+    position: absolute;
+    top: 20px;  /* Adjusted to ensure it's not too close to the top */
+    left: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+}
+
+/* Adjust spacing between text and date */
+.game-card p {
+    margin: 2px 0;  /* Reduce margin to tighten the spacing */
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Add background color to the text section */
+.game-details {
+    background-color: #eeeeee; /* Light grey background */
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* Styling for the team logos and percentages */
+.team-odds {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+}
+
+.team img {
+    width: 80px;  /* Adjusted to a fixed size */
+    height: 80px; /* Adjusted to a fixed size */
+    object-fit: contain; /* Ensures logo is contained within the fixed box */
+    overflow: visible;
+    margin-bottom: 5px;
+    align-items: center;
+}
+
+.team p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: auto; 
+    margin-bottom: 5px;
+}
+
+/* Ensure the game card has a minimum height to align logos */
+.game-card {
+    min-height: 150px;
+}
+
+
+
+

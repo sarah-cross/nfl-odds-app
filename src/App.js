@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import TeamList from './components/TeamList';
+import TeamDetails from './components/TeamDetails';
+import { fetchTeamScheduleAndOdds } from './api';
 import './App.css';
 
 function App() {
+  const [oddsData, setOddsData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchTeamScheduleAndOdds();
+      setOddsData(data);
+    };
+
+    fetchData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<TeamList />} />
+          <Route path="/team/:teamName" element={<TeamDetails oddsData={oddsData} />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
 export default App;
+
+
+
